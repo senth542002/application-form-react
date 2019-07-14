@@ -1,0 +1,54 @@
+{
+  "name": "application-form-react",
+  "version": "1.0.0",
+  "description": "Handles Applicaition form data",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon ./bin/www",
+    "test": "NODE_ENV=test mocha --timeout 10000",
+    "coverage": "NODE_ENV=test nyc --reporter=text mocha --timeout 10000",
+    "format": "prettier-standard 'app/**/*.js' 'app/**/*.jsx' 'server/**/*.js'"
+  },
+  "lint-staged": {
+    "linters": {
+      "**/*.js": [
+        "prettier-standard",
+        "git add"
+      ],
+      "**/*.jsx": [
+        "prettier-standard",
+        "git add"
+      ]
+    }
+  },
+  "engines": {
+    "node": "^8.11.1",
+    "npm": "^6.9.0"
+  },
+  "heroku-postbuild": "npm install --production",
+  "keywords": [],
+  "author": "Senthilkumar",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "js-beautify": "^1.10.0",
+    "morgan": "^1.9.1",
+    "pg": "^7.11.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.10.0",
+    "sequelize-cli": "^5.4.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "cors": "^2.8.5",
+    "husky": "^2.2.0",
+    "lint-staged": "^8.1.6",
+    "mocha": "^6.1.4",
+    "nock": "^10.0.6",
+    "nodemon": "^1.19.0",
+    "prettier-standard": "^9.1.1",
+    "supertest": "^4.0.2"
+  }
+}

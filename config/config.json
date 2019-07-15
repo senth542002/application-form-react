@@ -13,8 +13,15 @@
     "database": "student_application",
     "host": "postgres",
     "port": 5432,
-    "dialect": "postgres",
-    "protocol": "postgres"
+    "dialect": "postgres"
+  },
+  "local-test": {
+    "username": "senthilkumar",
+    "password": null,
+    "database": "student_application",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres"
   },
   "test-with-coverage": {
       "username": "eqyjykacehzrll",

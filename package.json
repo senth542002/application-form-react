@@ -4,7 +4,7 @@
   "description": "Handles Applicaition form data",
   "main": "index.js",
   "scripts": {
-    "start:dev": "nodemon ./bin/www",
+    "start": "nodemon ./bin/www",
     "test": "NODE_ENV=test mocha --timeout 10000",
     "local-test": "NODE_ENV=local-test mocha --timeout 10000",
     "coverage": "NODE_ENV=test nyc --reporter=text mocha --timeout 10000",

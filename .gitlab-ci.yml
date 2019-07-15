@@ -72,7 +72,6 @@ deploy:
       - release
 
   variables:
-  # I need to control which Git branch I'm on in order to push to Heroku
     publication_branch_name: "application-form-react"
 
   script:

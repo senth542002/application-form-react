@@ -9,4 +9,7 @@ module.exports = (app) => {
 
   app.delete(
     '/api/applications/:applicationId', studentApplicationController.destroy)
+
+  app.delete(
+      '/api/applications', studentApplicationController.deleteAll)
 };

@@ -15,6 +15,13 @@ module.exports = {
       .catch(error => res.status(400).send(console.log(error)));
 },
 
+deleteAll(req, res) {
+    return StudentApplication
+      .destroy({where:{}})
+      .then(application => res.status(200).send(application))
+      .catch(error => res.status(400).send(console.log(error)));
+},
+
   destroy (req, res) {
     console.log('Request:'+req.body);
     return StudentApplication.findOne({

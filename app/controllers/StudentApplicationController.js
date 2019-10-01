@@ -12,7 +12,10 @@ module.exports = {
           dateOfBirth: req.body.dateOfBirth,
       })
       .then(application => res.status(201).send(application))
-      .catch(error => res.status(400).send({ message: error }));
+      .catch(error => {
+        console.log(error)
+        res.status(400).send({ message: error['original']['detail'] });
+      })
     },
 
     deleteAll(req, res) {

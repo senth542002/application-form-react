@@ -1,6 +1,7 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const StudentApplication = sequelize.define('StudentApplication', {
+
     name: {
       type: DataTypes.STRING,
       allowNull: false,

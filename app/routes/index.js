@@ -12,4 +12,10 @@ module.exports = (app) => {
 
   app.delete(
       '/api/applications', studentApplicationController.deleteAll)
+
+  app.get('/api/applications/:applicationNumber', studentApplicationController.fetch)
+
+  app.get('/api/applications', studentApplicationController.fetchAll)
+
+  app.get('/api/applicationsByMobileNumber/:mobileNumber', studentApplicationController.fetchByMobileNumber)
 };

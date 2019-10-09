@@ -18,6 +18,51 @@ module.exports = {
       })
     },
 
+
+    fetch(req,res) {
+
+        return StudentApplication
+            .findAll({
+                where:{
+                    id: req.params.applicationNumber
+                }
+            })
+
+            .then(studentApplication => {
+
+                 if(studentApplication && studentApplication.length > 0 ) {
+                    return res.status(200).send({ data: studentApplication })
+                 } else {
+                 return res.status(400).send({ message: 'Application Number Not available' })
+                 }
+
+
+            })
+            .catch(error => res.status(400).send(console.log(error)));
+
+    },
+
+    fetchByMobileNumber(req,res) {
+        return StudentApplication
+                    .findAll({
+                        where:{
+                            mobileNumber: req.params.mobileNumber
+                        }
+                    })
+
+        .then(application => res.status(200).send({ data: application }))
+        .catch(error => res.status(400).send(console.log(error)));
+    },
+
+    fetchAll(req, res) {
+        return StudentApplication
+        .findAll({
+            where:{},
+            })
+        .then(application => res.json(application))
+        .catch(error => res.status(400).send(console.log(error)));
+    },
+
     deleteAll(req, res) {
         return StudentApplication
         .destroy({
